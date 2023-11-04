@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}Photo Detail{% endblock %}
+
+{% block contents %}
+<style>
+    .box {
+        width: 100vw;
+        margin: 5vh auto;
+        text-align: center;
+    }
+</style>
+
+    <br>
+    <div class="box">
+        <h2>{{object.title}}</h2>
+        <p>{{object.comment}}</p>
+        <br>
+        <p>post at : {{object.posted_at}}</p>
+        <p><img src="{{object.image1.url}}"></p>
+        {% if object.image2 %}
+            <p><img src="{{object.image2.url}}"></p>
+        {% endif %}
+
+        {% if request.user == object.user %}
+        <br>
+        <form method="post">
+            <a href="{% url 'photo:photo_delete' object.pk %}" class="btn btn-primary my-2">削除</a>
+        </form>
+        {% endif %}
+    </div>
+
+{% endblock %}

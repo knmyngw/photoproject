@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Log out{% endblock %}
+
+    {% block contents %}
+    <!-- <div class="container"> -->
+        <!-- <div class="row"> -->
+            <!-- <div class="col offset-4 py-4"> -->
+    <style>
+        .box {
+            width: 100vw;
+            margin: 5vh auto;
+            text-align: center;
+        }
+    </style>
+    <div class="box">
+
+        <h3>ログアウトしました</h3>
+        <br>
+        <h5><a href="{% url 'photo:index' %}">トップページ</a></h5>
+        <!-- <p><a href="{% url 'photo:index' %}">トップページ</a></p> -->
+    </div>
+    {% endblock %}
